@@ -34,5 +34,5 @@ management:
     sampling:
       probability: 1.0
 feign:
-  hystrix:
+  circuitbreaker:
     enabled: true
