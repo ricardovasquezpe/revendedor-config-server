@@ -15,8 +15,8 @@ spring:
         jdbc:
           time_zone: UTC
       dialect: 'org.hibernate.dialect.MySQL8Dialect'
-    hibernate:
-      ddl-auto: 'update'
+    #hibernate:
+      #ddl-auto: 'update'
 eureka:
   instance:
     client:
