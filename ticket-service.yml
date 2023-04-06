@@ -1,6 +1,10 @@
 server:
   port: '8090'
 spring:
+  flyway:
+    enabled: true
+    locations: classpath:/db/scripts/migration
+    schemas: refactorizando
   datasource:
     url: 'jdbc:mysql://localhost/rvdor_tickets'
     username: root
