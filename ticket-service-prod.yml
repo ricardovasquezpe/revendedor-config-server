@@ -1,0 +1,48 @@
+server:
+  port: '8090'
+spring:
+  flyway:
+    baselineOnMigrate: true
+    enabled: true
+    url: jdbc:mysql://mysql/rvdor_tickets
+    user: root
+    password: '123456'
+    group: true
+  datasource:
+    url: 'jdbc:mysql://mysql/rvdor_tickets'
+    username: root
+    password: '123456'
+  jpa:
+    properties:
+      hibernate:
+        jdbc:
+          time_zone: UTC
+      dialect: 'org.hibernate.dialect.MySQL8Dialect'
+    #hibernate:
+      #ddl-auto: 'update'
+eureka:
+  instance:
+    client:
+      serverUrl:
+        defaultZone: http://registry-service:8761/eureka/
+  client:
+    serviceUrl:
+      defaultZone: http://registry-service:8761/eureka        
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: always
+    metrics:
+      enabled: true
+    prometheus:
+      enabled: true
+  tracing:
+    sampling:
+      probability: 1.0
+feign:
+  circuitbreaker:
+    enabled: true
